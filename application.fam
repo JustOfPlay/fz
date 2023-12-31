@@ -1,5 +1,5 @@
 App(
-    appid="led_controller",
+    appid="test",
     name="Led Controller",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="main_skeleton_app",
