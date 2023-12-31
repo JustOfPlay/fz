@@ -1,6 +1,6 @@
 App(
-    appid="skeleton_app",
-    name="[WIP] Skeleton Sample App",
+    appid="Led_Controller",
+    name="Led Controller",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="main_skeleton_app",
     stack_size=4 * 1024,
@@ -9,7 +9,7 @@ App(
     ],
     order=10,
     fap_icon="app.png",
-    fap_category="GPIO",
+    fap_category="Tools",
     fap_icon_assets="assets",
-    fap_description="Skeleton Sample App.  This is intended to be used as a starting point for new applications with one primary screen.",
+    fap_description="Its an app to control the tiny led on your flipper zero.",
 )
