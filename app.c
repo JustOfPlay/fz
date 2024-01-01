@@ -5,7 +5,7 @@
 const GpioPin* const pin_led = &gpio_ext_pa7;
 const GpioPin* const pin_back = &gpio_button_back;
 
-static void main(Canvas* canvas, void* context) {
+static void delta_gui_app(Canvas* canvas, void* context) {
     UNUSED(context);
     canvas_draw_icon(canvas, 2, 1, &I_SDcardMounted_11x8);
 
