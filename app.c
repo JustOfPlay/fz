@@ -1,34 +1,11 @@
-#include <furi.h>
-#include <gui/gui.h>
+canvas_draw_box(canvas, 0, 0, 127, 63);
+canvas_set_color(canvas, ColorWhite);
 
-int main() {
-    FuriStatus status = furi_init();
-    if (status != FuriStatusOk) {
-        printf("Furi initialization failed!\n");
-        return -1;
-    }
+canvas_draw_icon(canvas, 0, 0, &I_Background_128x11);
 
-    ViewPort* view_port = view_port_alloc();
-    Gui* gui = furi_record_open(RECORD_GUI);
-    gui_add_view_port(gui, view_port, GuiLayerFullscreen);
+canvas_draw_icon(canvas, 0, 52, &I_Background_128x11);
 
-    Canvas* canvas = view_port_get_canvas(view_port);
-    canvas_set_font(canvas, FontPrimary);
-    canvas_draw_str(canvas, 51, 32, "Hello Application");
+canvas_draw_icon(canvas, 117, 45, &I_Alert_9x8);
 
-    while(1) {
-        InputEvent event;
-        furi_check(furi_event_get(&event, FuriWaitForever) == FuriStatusOk);
+canvas_draw_icon(canvas, 118, 31, &I_Charging-lightning_mask_9x10);
 
-        if (event.key == InputKeyBack) {
-            break;
-        }
-    }
-
-    gui_remove_view_port(gui, view_port);
-    view_port_free(view_port);
-    furi_record_close(RECORD_GUI);
-    furi_deinit();
-
-    return 0;
-}
