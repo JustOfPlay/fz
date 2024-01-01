@@ -14,8 +14,8 @@
 
 
 
-static void delta_gui_app(Canvas* canvas, void* context) {
-    UNUSED(context);
+static void delta_gui_app(Canvas* canvas) {
+    
     canvas_draw_line(canvas, 0, 13, 127, 13);
 
     canvas_set_font(canvas, FontSecondary);
