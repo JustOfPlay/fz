@@ -2,7 +2,7 @@
 #include <gui/gui.h>
 
 int main() {
-    canvas_draw_box(canvas, 0, 0, 127, 63);
+    canvas_draw_box(Canvas, 0, 0, 127, 63);
     canvas_set_color(Canvas, ColorWhite);
 
     canvas_draw_icon(Canvas, 0, 0, &I_Background_128x11);
