@@ -1,23 +1,34 @@
 #include <furi.h>
+#include <gui/gui.h>
 
-int32_t flipper_hello_app(void* p) {
-    UNUSED(p);
-
-    FuriMessageQueue* event_queue = furi_message_queue_alloc(8, sizeof(InputEvent));
-
-    while(1) {
-        // FuriMessageQueue-Logik zum Warten auf Eingaben oder andere Ereignisse hier einfügen
-        // Zum Beispiel: furi_message_queue_get(event_queue, &event, FuriWaitForever);
-
-        // Beispieltext auf dem Flipper-Display anzeigen
-        furi_display_clear();
-        furi_display_set_cursor(0, 0);
-        furi_display_printf("Hello, Flipper Zero!");
-
-        // Logik zum Beenden der Schleife hier einfügen, z.B. wenn eine bestimmte Taste gedrückt wird
-        // Zum Beispiel: if (event.key == InputKeyBack) break;
+int main() {
+    FuriStatus status = furi_init();
+    if (status != FuriStatusOk) {
+        printf("Furi initialization failed!\n");
+        return -1;
     }
 
-    furi_message_queue_free(event_queue);
+    ViewPort* view_port = view_port_alloc();
+    Gui* gui = furi_record_open(RECORD_GUI);
+    gui_add_view_port(gui, view_port, GuiLayerFullscreen);
+
+    Canvas* canvas = view_port_get_canvas(view_port);
+    canvas_set_font(canvas, FontPrimary);
+    canvas_draw_str(canvas, 51, 32, "Hello Application");
+
+    while(1) {
+        InputEvent event;
+        furi_check(furi_event_get(&event, FuriWaitForever) == FuriStatusOk);
+
+        if (event.key == InputKeyBack) {
+            break;
+        }
+    }
+
+    gui_remove_view_port(gui, view_port);
+    view_port_free(view_port);
+    furi_record_close(RECORD_GUI);
+    furi_deinit();
+
     return 0;
 }
