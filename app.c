@@ -1,6 +1,8 @@
 #include <furi.h>
 #include <gui/gui.h>
 
+
+#define BACKLIGHT_ON 1
 // For list of pins see https://github.com/flipperdevices/flipperzero-firmware/blob/dev/firmware/targets/f7/furi_hal/furi_hal_resources.c
 const GpioPin* const pin_led = &gpio_ext_pa7;
 const GpioPin* const pin_back = &gpio_button_back;
