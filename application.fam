@@ -2,7 +2,7 @@ App(
     appid="bettergui",
     name="Better Gui",
     apptype=FlipperAppType.EXTERNAL,
-    entry_point="delta_gui_app",
+    entry_point="main_skeleton_app",
     stack_size=4 * 1024,
     requires=[
         "gui",
