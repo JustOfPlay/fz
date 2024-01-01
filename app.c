@@ -54,7 +54,7 @@ int gpio_blink_app(void* p) {
 
     Gui* gui = furi_record_open(RECORD_GUI);
     ViewPort* view_port = view_port_alloc();
-    view_port_draw_callback_set(view_port, my_draw_callback, NULL);
+    view_port_draw_callback_set(view_port, delta_gui_app, NULL);
     gui_add_view_port(gui, view_port, GuiLayerFullscreen);
 
     furi_hal_gpio_init_simple(pin_led, GpioModeOutputOpenDrain);
