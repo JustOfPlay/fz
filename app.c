@@ -1,56 +1,55 @@
-#include <gtk/gtk.h>
+#include <furi.h>
+#include <gui/gui.h>
+#include <assets_icons.h>
 
-// LED-Farbenauswahl-Callback-Funktion
-void on_color_changed(GtkComboBox *widget, gpointer user_data) {
-    GtkTreeIter iter;
-    GtkTreeModel *model;
-    gchar *value;
+static void hello_app_draw_callback(Canvas* canvas, void* ctx) {
+    UNUSED(ctx);
 
-    // Holen des ausgewählten Werts aus der ComboBox
-    if (gtk_combo_box_get_active_iter(widget, &iter)) {
-        model = gtk_combo_box_get_model(widget);
-        gtk_tree_model_get(model, &iter, 0, &value, -1);
-
-        // Hier kannst du die Logik für die LED-Farbensteuerung implementieren
-        // Beispiel: Je nach 'value' die entsprechende LED-Farbe setzen
-        // Zum Beispiel: if (strcmp(value, "Rot") == 0) { setze LED auf Rot; }
-
-        g_free(value);
-    }
+    canvas_clear(canvas);
+    canvas_set_font(canvas, FontPrimary);
+    canvas_draw_icon(canvas, 0, 8, &I_WarningDolphin_45x42);
+    canvas_set_font(canvas, FontSecondary);
+    canvas_draw_str(canvas, 51, 32, "Hello Application");
+    canvas_set_font(canvas, FontSecondary);
+    canvas_draw_str(canvas, 17, 60, "github.com/filipsedivy");
+    canvas_draw_frame(canvas, 0, 50, 128, 14);
 }
 
-int main(int argc, char *argv[]) {
-    GtkWidget *window;
-    GtkWidget *combo_box;
-    GtkListStore *store;
+static void hello_app_input_callback(InputEvent* input_event, void* ctx) {
+    furi_assert(ctx);
+    FuriMessageQueue* event_queue = ctx;
 
-    gtk_init(&argc, &argv);
+    furi_message_queue_put(event_queue, input_event, FuriWaitForever);
+}
 
-    // Erstellen des Hauptfensters
-    window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-    gtk_window_set_title(GTK_WINDOW(window), "LED-Farbwähler");
-    g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+int32_t flipper_hello_app(void* p) {
+    UNUSED(p);
 
-    // Erstellen einer ComboBox mit Farboptionen
-    combo_box = gtk_combo_box_new_text();
-    store = GTK_LIST_STORE(gtk_list_store_new(1, G_TYPE_STRING));
-    gtk_combo_box_set_model(GTK_COMBO_BOX(combo_box), GTK_TREE_MODEL(store));
+    InputEvent event;
+    FuriMessageQueue* event_queue = furi_message_queue_alloc(8, sizeof(InputEvent));
 
-    // Farben hinzufügen
-    gtk_list_store_append(store, &iter);
-    gtk_list_store_set(store, &iter, 0, "Rot", -1);
-    gtk_list_store_append(store, &iter);
-    gtk_list_store_set(store, &iter, 0, "Grün", -1);
-    gtk_list_store_append(store, &iter);
-    gtk_list_store_set(store, &iter, 0, "Blau", -1);
+    // Configure view port
+    ViewPort* view_port = view_port_alloc();
+    view_port_draw_callback_set(view_port, hello_app_draw_callback, NULL);
+    view_port_input_callback_set(view_port, hello_app_input_callback, event_queue);
 
-    g_signal_connect(combo_box, "changed", G_CALLBACK(on_color_changed), NULL);
+    // Register view port in GUI
+    Gui* gui = furi_record_open(RECORD_GUI);
+    gui_add_view_port(gui, view_port, GuiLayerFullscreen);
 
-    // Hinzufügen der ComboBox zum Hauptfenster
-    gtk_container_add(GTK_CONTAINER(window), combo_box);
+    while(1) {
+        furi_check(furi_message_queue_get(event_queue, &event, FuriWaitForever) == FuriStatusOk);
 
-    gtk_widget_show_all(window);
-    gtk_main();
+        if(event.key == InputKeyBack) {
+            break;
+        }
+    }
+
+    furi_message_queue_free(event_queue);
+
+    gui_remove_view_port(gui, view_port);
+    view_port_free(view_port);
+    furi_record_close(RECORD_GUI);
 
     return 0;
 }
