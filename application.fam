@@ -11,5 +11,5 @@ App(
     fap_icon="app.png",
     fap_category="Media",
     fap_icon_assets="assets",
-    fap_description="Its an app with a better looking start menu.",
+    fap_description="Its an app with a better looking starti menu.",
 )

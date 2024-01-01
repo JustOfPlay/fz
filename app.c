@@ -12,8 +12,7 @@
 
 #define BACKLIGHT_ON 1
 
-const GpioPin* const pin_led = &gpio_ext_pa7;
-const GpioPin* const pin_back = &gpio_button_back;
+
 
 static void delta_gui_app(Canvas* canvas, void* context) {
     UNUSED(context);
