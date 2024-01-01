@@ -1,8 +1,8 @@
 App(
-    appid="test",
-    name="Led Controller",
+    appid="bettergui",
+    name="Better Gui",
     apptype=FlipperAppType.EXTERNAL,
-    entry_point="gpio_blink_app",
+    entry_point="main",
     stack_size=4 * 1024,
     requires=[
         "gui",
@@ -11,5 +11,5 @@ App(
     fap_icon="app.png",
     fap_category="Tools",
     fap_icon_assets="assets",
-    fap_description="Its an app to control the tiny led on your flipper zero.",
+    fap_description="Its an app with a better looking start menu.",
 )
