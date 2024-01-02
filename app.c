@@ -4,6 +4,7 @@
 #include <furi_hal.h>
 #include <gui/gui.h>
 #include <gui/view.h>
+#include <gui/icon_i.h>
 #include <gui/view_dispatcher.h>
 #include <gui/modules/submenu.h>
 #include <gui/modules/text_input.h>
