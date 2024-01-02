@@ -1,5 +1,5 @@
 # 🐬 Flipper Zero - Better Gui
-With DeltaModLoader you can load a dll file into your favourite games
+
 
 
 
