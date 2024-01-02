@@ -29,6 +29,8 @@ static void delta_gui_app(Canvas* canvas, void* context {
     canvas_draw_str(canvas, 37, 14, "12:50");
 
     canvas_draw_line(canvas, 0, 15, 127, 15);
+    
+    canvas_draw_icon(canvas, 51, 50, &I_FaceCharging_29x14);
 
     while (LeftPressed == "True") {
         canvas_set_font(canvas, FontPrimary);
