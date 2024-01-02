@@ -16,8 +16,7 @@
 
 #define BACKLIGHT_ON 1
 
-const GpioPin* const pin_led = &gpio_ext_pa7;
-const GpioPin* const pin_back = &gpio_button_back;
+
 
 static void delta_gui_app(Canvas* canvas, void* context) {
     UNUSED(context);
@@ -63,25 +62,3 @@ static void delta_gui_app(Canvas* canvas, void* context) {
 
 }
 
-int gpio_blink_app(void* p) {
-    UNUSED(p);
-
-    Gui* gui = furi_record_open(RECORD_GUI);
-    ViewPort* view_port = view_port_alloc();
-    view_port_draw_callback_set(view_port, my_draw_callback, NULL);
-    gui_add_view_port(gui, view_port, GuiLayerFullscreen);
-
-    furi_hal_gpio_init_simple(pin_led, GpioModeOutputOpenDrain);
-    do {
-        furi_hal_gpio_write(pin_led, true);
-        furi_delay_ms(500);
-        furi_hal_gpio_write(pin_led, false);
-        furi_delay_ms(500);
-
-    } while(furi_hal_gpio_read(pin_back));
-
-    furi_hal_gpio_init_simple(pin_led, GpioModeAnalog);
-
-    gui_remove_view_port(gui, view_port);
-    return 0;
-}
