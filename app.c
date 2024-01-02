@@ -12,7 +12,7 @@
 #include <notification/notification.h>
 #include <notification/notification_messages.h>
 
-
+#include "app_icons.h"
 
 #define BACKLIGHT_ON 1
 
