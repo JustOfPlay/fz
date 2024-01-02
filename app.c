@@ -65,8 +65,8 @@ static void delta_gui_app(Canvas* canvas, void* context) {
 
 
 
-int main(void* p) {
-    UNUSED(p);
+int main() {
+
 
     InputEvent event;
 
