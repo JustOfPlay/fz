@@ -69,6 +69,11 @@ static void delta_gui_app(Canvas* canvas, void* context) {
     canvas_draw_str(canvas, 1, 67, "---*-----------------");
 
     //canvas_draw_icon(canvas, 50, 21, &I_Power_25x27);
+
+}
+int main() {
+
+    delta_gui_app(NULL, NULL);
+
     return 0;
 }
-
