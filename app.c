@@ -22,7 +22,7 @@
 
 #define BACKLIGHT_ON 1
 
-static void delta_gui_app(Canvas* canvas, void* context {
+static void delta_gui_app(Canvas* canvas, void* context) {
     UNUSED(context);
 
     canvas_set_font(canvas, FontBigNumbers);
@@ -64,9 +64,12 @@ int main() {
     while(true) {
         furi_check(furi_message_queue_get(event_queue, &event, FuriWaitForever) == FuriStatusOk);
 
-        if(event.key == InputKeyBack) {
-            break;
+        if (event->type == InputTypeLong) {
+            if(event.key == InputKeyBack) {
+                break;
+            }
         }
+
     }
 
     furi_message_queue_free(event_queue);
