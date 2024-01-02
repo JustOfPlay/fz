@@ -30,13 +30,8 @@
 
 static void delta_gui_app(Canvas* canvas, void* context) {
 
-    char label_time_table_2[BUFFER_SIZE];
-    itoa(time_table_2, label_time_table_2, BUFFER_SIZE);
-    char label_time_table_5[BUFFER_SIZE];
-    itoa(time_table_5, label_time_table_5, BUFFER_SIZE);
 
 
-    
     //canvas_draw_icon(canvas, 2, 1, &I_SDcardMounted_11x8);
 
     canvas_draw_line(canvas, 0, 12, 125, 12);
