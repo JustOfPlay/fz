@@ -16,6 +16,8 @@
 #include <string.h>
 #include <stdio.h>
 
+#include <assets_icons.h>
+
 #define BACKLIGHT_ON 1
 
 
