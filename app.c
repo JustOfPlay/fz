@@ -62,7 +62,11 @@ static void delta_gui_app(Canvas* canvas, void* context) {
     //canvas_draw_icon(canvas, 50, 21, &I_Power_25x27);
 
 }
-
+static void input_callback(InputEvent* input_event, void* context) {
+    furi_assert(context);
+    FuriMessageQueue* event_queue = ctx;
+    furi_message_queue_put(event_queue, input_event, FuriWaitForever);
+}
 
 
 int main() {
