@@ -16,11 +16,11 @@
 #include <string.h>
 #include <stdio.h>
 
+
+
 #include <assets_icons.h>
 
 #define BACKLIGHT_ON 1
-
-
 
 static void delta_gui_app(Canvas* canvas, void* context) {
     UNUSED(context);
@@ -29,7 +29,7 @@ static void delta_gui_app(Canvas* canvas, void* context) {
 
     canvas_draw_line(canvas, 0, 12, 125, 12);
 
-    canvas_draw_icon(canvas, 2, 22, &I_SDcardFail_11x8);
+    //canvas_draw_icon(canvas, 2, 22, &I_SDcardFail_11x8);
 
     //canvas_draw_icon(canvas, 16, 1, &I_Bluetooth_Idle_5x8);
 
