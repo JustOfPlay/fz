@@ -15,16 +15,7 @@
 #include <string.h>
 #include <stdio.h>
 
-
-
-
-
-
 #define BACKLIGHT_ON 1
-
-
-
-
 
 
 
@@ -75,8 +66,8 @@ int main() {
 
 
 
-    void* canvas = &valid_canvas;
-    void* context = &valid_context;
+    void* canvas;
+    void* context;
 
     delta_gui_app(canvas, context);
 
