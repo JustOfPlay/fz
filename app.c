@@ -73,7 +73,7 @@ static void delta_gui_app(Canvas* canvas, void* context) {
 }
 int main() {
 
-    delta_gui_app(NULL, NULL);
+    delta_gui_app();
 
     return 0;
 }
