@@ -11,6 +11,10 @@
 #include <gui/modules/variable_item_list.h>
 #include <notification/notification.h>
 #include <notification/notification_messages.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
 
 #include "app_icons.h"
 
