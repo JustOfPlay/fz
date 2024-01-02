@@ -44,7 +44,7 @@ static void delta_gui_app(Canvas* canvas, void* context) {
 
     canvas_draw_icon(canvas, -1, 27, &I_power_19x20);       //placeholder app
 
-    canvas_draw_icon(canvas, 51, 20, &I_power_hvr_25x27);       //placeholder app
+    canvas_draw_icon(canvas, 51, 20, &I_power_hover_19x20);       //placeholder app
 
     canvas_draw_icon(canvas, 116, 54, &I_Pin_back_arrow_10x8);      //back arrow
 
