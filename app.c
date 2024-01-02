@@ -24,8 +24,8 @@
 
 
 
-static void delta_gui_app(Canvas* canvas, void* context) {
-    UNUSED(context);
+static void delta_gui_app(Canvas* canvas) {// , void* context
+    //UNUSED(context);
     //canvas_draw_icon(canvas, 2, 1, &I_SDcardMounted_11x8);
 
     canvas_draw_line(canvas, 0, 12, 125, 12);
@@ -64,6 +64,6 @@ static void delta_gui_app(Canvas* canvas, void* context) {
     canvas_draw_str(canvas, 1, 67, "---*-----------------");
 
     //canvas_draw_icon(canvas, 50, 21, &I_Power_25x27);
-    
+
 }
 
