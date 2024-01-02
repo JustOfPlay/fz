@@ -42,9 +42,9 @@ static void delta_gui_app(Canvas* canvas, void* context) {
 
     canvas_draw_icon(canvas, 100, 3, &I_Battery_26x8);      //battery icon
 
-    canvas_draw_icon(canvas, -1, 27, &I_Power_25x27);       //placeholder app
+    canvas_draw_icon(canvas, -1, 27, &I_power_25x27);       //placeholder app
 
-    canvas_draw_icon(canvas, 51, 20, &I_Power_hvr_25x27);       //placeholder app
+    canvas_draw_icon(canvas, 51, 20, &I_power_hvr_25x27);       //placeholder app
 
     canvas_draw_icon(canvas, 116, 54, &I_Pin_back_arrow_10x8);      //back arrow
 
