@@ -66,8 +66,6 @@ static void delta_gui_app(Canvas* canvas, void* context) {
 
 
 int main() {
-
-
     InputEvent event;
 
     FuriMessageQueue* event_queue = furi_message_queue_alloc(8, sizeof(InputEvent));
@@ -75,7 +73,7 @@ int main() {
     ViewPort* view_port = view_port_alloc();
 
 
-    view_port_draw_callback_set(view_port, draw_callback, NULL);
+    view_port_draw_callback_set(view_port, delta_gui_app, NULL);
 
 
     view_port_input_callback_set(view_port, input_callback, event_queue);
