@@ -25,7 +25,8 @@
 static void delta_gui_app(Canvas* canvas, void* context) {
     UNUSED(context);
 
-    canvas_draw_icon(canvas, 2, 1, &I_SDcardMounted_11x8);
+    //canvas_draw_icon(canvas, 2, 1, &I_SDcardMounted_11x8);
+    canvas_draw_icon(canvas, 2, 1, &I_app)
 
     canvas_draw_line(canvas, 0, 12, 125, 12);
 
