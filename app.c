@@ -64,7 +64,7 @@ int main() {
     while(true) {
         furi_check(furi_message_queue_get(event_queue, &event, FuriWaitForever) == FuriStatusOk);
 
-        if (event->type == InputTypeLong) {
+        if (event.type == InputTypeLong) {
             if(event.key == InputKeyBack) {
                 break;
             }
