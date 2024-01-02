@@ -11,7 +11,8 @@
 #include <gui/modules/variable_item_list.h>
 #include <notification/notification.h>
 #include <notification/notification_messages.h>
-#include "assets/"
+
+
 
 #define BACKLIGHT_ON 1
 
