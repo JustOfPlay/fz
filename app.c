@@ -18,7 +18,7 @@
 
 #include <assets_icons.h>
 
-char LeftPressed = "False";
+char LeftPressed == "False";
 
 #define BACKLIGHT_ON 1
 
@@ -42,10 +42,10 @@ static void input_callback(InputEvent* input_event, void* context) {
     furi_message_queue_put(event_queue, input_event, FuriWaitForever);
 
     if (event->key == InputKeyLeft) {
-        char LeftPressed = "True";
+        char LeftPressed == "True";
     }
     if (!event->key == InputKeyLeft) {
-        char LeftPressed = "False";
+        char LeftPressed == "False";
     }
 }
 
