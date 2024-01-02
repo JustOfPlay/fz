@@ -50,9 +50,9 @@ static void delta_gui_app(Canvas* canvas, void* context) {
 
     canvas_draw_icon(canvas, 15, 2, &I_Bluetooth_Connected_16x8);       //bluetooth on and connected
 
-    canvas_draw_icon(canvas, 25, 27, &I_Vol_down_25x27);            //placeholder app
+    canvas_draw_icon(canvas, 25, 27, &'I_voldown_24x21');            //placeholder app
 
-    canvas_draw_icon(canvas, 77, 26, &I_Vol_up_25x27);      //placeholder app
+    canvas_draw_icon(canvas, 77, 26, &I_volup_24x21);      //placeholder app
 
     canvas_draw_icon(canvas, 103, 26, &I_Mute_25x27);       //placeholder app
 
