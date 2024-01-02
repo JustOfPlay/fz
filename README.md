@@ -1,3 +1,19 @@
+<p align="center">
+<img src=".flipcorg/banner.png" alt="logo" width="30%"/>
+
+
+<h1 align="center">Better Gui</h1>
+<p align="center">A modified Flipper Zero Gui.</p>
+
+
+---
+
+
+
+
+
+
+
 # 🐬 Flipper Zero - Better Gui
 
 
