@@ -54,7 +54,7 @@ static void delta_gui_app(Canvas* canvas, void* context) {
 
     canvas_draw_icon(canvas, 77, 26, &I_volup_24x21);      //placeholder app
 
-    canvas_draw_icon(canvas, 103, 26, &I_Mute_25x27);       //placeholder app
+    canvas_draw_icon(canvas, 103, 26, &I_mute_19x20);       //placeholder app
 
     canvas_set_font(canvas, FontSecondary);
     canvas_draw_str(canvas, 93, 62, "Hold (    )");         //text for back arrow
