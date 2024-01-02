@@ -73,10 +73,13 @@ static void delta_gui_app(Canvas* canvas, void* context) {
 }
 int main() {
 
-    void * canvas;
-    void * context;
+    Canvas valid_canvas; // Annahme einer gültigen Canvas-Struktur
+    Context valid_context; // Annahme einer gültigen Context-Struktur
 
-    delta_gui_app();
+    void* canvas = &valid_canvas; // Der Zeiger auf die Canvas-Struktur
+    void* context = &valid_context; // Der Zeiger auf die Context-Struktur
+
+    delta_gui_app(canvas, context);
 
     return 0;
 }
