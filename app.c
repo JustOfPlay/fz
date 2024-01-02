@@ -36,7 +36,7 @@ static void delta_gui_app(Canvas* canvas, void* context) {
 
     canvas_draw_icon(canvas, 15, 18, &I_Bluetooth_Idle_5x8);    //bluetooth on
 
-    canvas_draw_icon(canvas, 108, 2, &I_Charginglightning_mask_9x10);      //charching
+    canvas_draw_icon(canvas, 108, 2, &I_Charging_lightning_mask_9x10);      //charching
 
     canvas_draw_box(canvas, 102, 5, 20, 4);            //edit 3. number for % value (max 0 | min 20)
 
