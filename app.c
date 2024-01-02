@@ -30,11 +30,7 @@ static void delta_gui_app(Canvas* canvas, void* context, InputEvent* event) {
 
     canvas_draw_line(canvas, 0, 15, 127, 15);
 
-    while (event->key == InputKeyLeft) {
-        canvas_set_font(canvas, FontPrimary);
-        canvas_draw_str(canvas, -1, 29, "Button Pressed (Left)");
-    }
-
+ 
 }
 static void input_callback(InputEvent* input_event, void* context) {
     furi_assert(context);
