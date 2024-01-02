@@ -22,11 +22,11 @@
 static void delta_gui_app(Canvas* canvas, void* context) {
     UNUSED(context);
 
-    //canvas_draw_icon(canvas, 2, 1, &I_SDcardMounted_11x8);
+    canvas_draw_icon(canvas, 2, 1, &I_SDcardMounted_11x8);
 
     canvas_draw_line(canvas, 0, 12, 125, 12);
 
-    //canvas_draw_icon(canvas, 2, 22, &I_SDcardFail_11x8);
+    canvas_draw_icon(canvas, 2, 22, &I_SDcardFail_11x8);
 
     //canvas_draw_icon(canvas, 16, 1, &I_Bluetooth_Idle_5x8);
 
