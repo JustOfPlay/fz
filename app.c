@@ -18,11 +18,11 @@
 
 #include <assets_icons.h>
 
-
+char LeftPressed = "False";
 
 #define BACKLIGHT_ON 1
 
-static void delta_gui_app(Canvas* canvas, void* context, InputEvent* event) {
+static void delta_gui_app(Canvas* canvas, void* context {
     UNUSED(context);
 
     canvas_set_font(canvas, FontBigNumbers);
@@ -30,12 +30,23 @@ static void delta_gui_app(Canvas* canvas, void* context, InputEvent* event) {
 
     canvas_draw_line(canvas, 0, 15, 127, 15);
 
- 
+    while (LeftPressed == "True") {
+        canvas_set_font(canvas, FontPrimary);
+        canvas_draw_str(canvas, -1, 29, "Button Pressed (OK)");
+    }
+
 }
 static void input_callback(InputEvent* input_event, void* context) {
     furi_assert(context);
     FuriMessageQueue* event_queue = context;
     furi_message_queue_put(event_queue, input_event, FuriWaitForever);
+
+    if (event->key == InputKeyLeft) {
+        char LeftPressed = "True";
+    }
+    if (!event->key == InputKeyLeft) {
+        char LeftPressed = "False";
+    }
 }
 
 
